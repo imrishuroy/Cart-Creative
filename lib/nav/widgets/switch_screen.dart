@@ -1,3 +1,4 @@
+import '/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 
 import '/enums/nav_item.dart';
@@ -10,8 +11,8 @@ class SwitchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     switch (navItem) {
-      case NavItem.dashboard:
-        return const Center(child: Text('DashBoard'));
+      case NavItem.home:
+        return const DashBoard();
       // return const DashBoard();
 
       // case NavItem.gallery:

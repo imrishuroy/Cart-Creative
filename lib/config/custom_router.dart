@@ -1,4 +1,5 @@
 import 'package:cart_creative/nav/nav_screen.dart';
+import 'package:cart_creative/screens/home/home_screen.dart';
 import 'package:cart_creative/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,9 @@ class CustomRouter {
 
       case NavScreen.routeName:
         return NavScreen.route();
+
+      case MyHomePage.routeName:
+        return MyHomePage.route();
 
       default:
         return _errorRoute();

@@ -1,3 +1,5 @@
+import 'package:universal_platform/universal_platform.dart';
+
 import '/repositories/auth/auth_repository.dart';
 import '/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -155,15 +157,16 @@ class LoginScreen extends StatelessWidget {
                           ),
                           // const Spacer(),
                           const SizedBox(height: 10.0),
-                          SizedBox(
-                            width: 250.0,
-                            child: SignInWithAppleButton(
-                              onPressed: () {
-                                context.read<LoginCubit>().appleLogin();
-                              },
-                              style: SignInWithAppleButtonStyle.white,
+                          if (UniversalPlatform.isIOS)
+                            SizedBox(
+                              width: 250.0,
+                              child: SignInWithAppleButton(
+                                onPressed: () {
+                                  context.read<LoginCubit>().appleLogin();
+                                },
+                                style: SignInWithAppleButtonStyle.white,
+                              ),
                             ),
-                          ),
                           const SizedBox(height: 20.0),
                           GoogleSignInButton(
                             onPressed: () =>

@@ -1,1 +1,1 @@
-enum NavItem { dashboard, happenings, galley, profile }
+enum NavItem { home, orders, offers, cart }

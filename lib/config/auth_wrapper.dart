@@ -26,6 +26,7 @@ class AuthWrapper extends StatelessWidget {
         } else if (state.status == AuthStatus.authenticated) {
           print('Auth State user - ${state.user?.userId}');
           Navigator.of(context).pushNamed(NavScreen.routeName);
+          //   Navigator.of(context).pushNamed(MyHomePage.routeName);
         }
       },
       child: const Scaffold(

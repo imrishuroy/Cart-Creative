@@ -7,7 +7,7 @@ import 'package:equatable/equatable.dart';
 part 'nav_event.dart';
 
 class NavBloc extends Bloc<NavEvent, NavItem> {
-  NavBloc() : super(NavItem.dashboard);
+  NavBloc() : super(NavItem.home);
 
   @override
   Stream<NavItem> mapEventToState(
