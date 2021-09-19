@@ -39,7 +39,7 @@ class GoogleSignInButton extends StatelessWidget {
                 child: Text(
                   title,
                   style: const TextStyle(
-                    fontWeight: FontWeight.w600,
+                    //  fontWeight: FontWeight.w600,
                     color: Colors.blue,
                     fontSize: 17.0,
                     letterSpacing: 1.0,
