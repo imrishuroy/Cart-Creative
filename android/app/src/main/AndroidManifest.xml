@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cart_creative">
+    package="com.sixteenbrains.cart_creative">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="cart_creative"
+        android:label="Cart Creative"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

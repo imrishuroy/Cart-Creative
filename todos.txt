@@ -1,0 +1,1 @@
+1. Create a login/signup page with google and apple sigin

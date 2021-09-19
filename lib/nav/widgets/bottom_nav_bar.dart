@@ -1,0 +1,90 @@
+import 'package:cart_creative/enums/enums.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+class BottomNavBar extends StatelessWidget {
+  final NavItem? navItem;
+  final Function(NavItem)? onitemSelected;
+
+  const BottomNavBar({
+    Key? key,
+    @required this.navItem,
+    @required this.onitemSelected,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10.0, right: 12.0, left: 12.0),
+      child: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20.0),
+          topRight: Radius.circular(20.0),
+          bottomLeft: Radius.circular(20.0),
+          bottomRight: Radius.circular(20.0),
+        ),
+        // borderRadius: BorderRadius.only(
+        //   topLeft: Radius.circular(20.0),
+        //   topRight: Radius.circular(20.0),
+        // ),
+        child: BottomNavigationBar(
+          elevation: 20.0,
+          //landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
+          // type: BottomNavigationBarType.shifting,
+
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.white,
+          iconSize: 20,
+          selectedFontSize: 12,
+          unselectedFontSize: 13,
+          selectedItemColor: const Color(0XFF00286E),
+          //selectedItemColor: Colors.green,
+          unselectedItemColor: Colors.grey,
+          currentIndex: NavItem.values.indexOf(navItem!),
+          onTap: (index) => onitemSelected!(NavItem.values[index]),
+          items: NavItem.values.map((item) {
+            return BottomNavigationBarItem(
+                icon: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: _itemIcon(item),
+                ),
+                label: _label(item));
+          }).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+Widget _itemIcon(NavItem item) {
+  if (item == NavItem.dashboard) {
+    return const Icon(Icons.dashboard);
+    // } else if (item == NavItem.gallery) {
+    //   return const Icon(FontAwesomeIcons.images);
+    // } else if (item == NavItem.happenings) {
+    //   return const Icon(FontAwesomeIcons.calendarAlt);
+    // } else if (item == NavItem.forms) {
+    // return const Icon(
+    //   Icons.feed,
+    //   size: 24.0,
+    // );
+  }
+
+  return const Icon(Icons.person);
+}
+
+String _label(NavItem item) {
+  if (item == NavItem.dashboard) {
+    return 'Home';
+  }
+  // } else if (item == NavItem.gallery) {
+  //   return 'Gallery';
+  // } else if (item == NavItem.happenings) {
+  //   return 'Happenings';
+  // } else if (item == NavItem.forms) {
+  //   return 'Forms';
+  // }
+
+  return '';
+}
